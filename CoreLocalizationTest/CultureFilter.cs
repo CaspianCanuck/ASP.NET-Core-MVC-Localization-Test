@@ -9,14 +9,12 @@ namespace CoreLocalizationTest
     /// <summary>
     /// Responsible for setting the request culture.
     /// </summary>
-    public class CultureFilterAttribute : Attribute, IActionFilter
+    public class CultureFilter : IAuthorizationFilter
     {
         private readonly string[] SUPPORTED_CULTURES = new[] { "en", "fr" };
 
-        public void OnActionExecuted(ActionExecutedContext context)
-        { }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
             if (context.HttpContext.Request.Path.HasValue)
             {

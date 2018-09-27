@@ -3,7 +3,6 @@ using CoreLocalizationTest.Models;
 
 namespace CoreLocalizationTest.Controllers
 {
-    [CultureFilter]
     public class HomeController : Controller
     {
         public IActionResult Index()
